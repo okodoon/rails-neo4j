@@ -17,8 +17,13 @@
 - CONSTRAINT ON ( faculty:Faculty ) ASSERT faculty.uuid IS UNIQUE
 - CONSTRAINT ON ( person:Person ) ASSERT person.uuid IS UNIQUE
 - CONSTRAINT ON ( university:University ) ASSERT university.uuid IS UNIQUE
+- CONSTRAINT ON ( 大学:大学 ) ASSERT 大学.uuid IS UNIQUE
+- CONSTRAINT ON ( 学部:学部 ) ASSERT 学部.uuid IS UNIQUE
 :indexes: []
 :versions:
 - '20190916112201'
 - '20190916124138'
 - '20190916124214'
+- '20190916153821'
+- '20190916154344'
+- '20190916154405'
