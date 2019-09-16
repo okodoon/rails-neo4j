@@ -1,0 +1,40 @@
+2019-09-16 08:36:09.571+0000 INFO  ======== Neo4j 3.4.1 ========
+2019-09-16 08:36:09.609+0000 INFO  Starting...
+2019-09-16 08:36:11.909+0000 INFO  Bolt enabled on localhost:7472.
+2019-09-16 08:36:13.764+0000 INFO  Started.
+2019-09-16 08:36:14.606+0000 ERROR Failed to start Neo4j on localhost:7474: Address localhost:7474 is already in use, cannot bind to it.
+2019-09-16 08:36:14.617+0000 INFO  Stopping...
+2019-09-16 08:36:14.639+0000 INFO  Stopped.
+2019-09-16 08:36:14.641+0000 ERROR Failed to start Neo4j: Starting Neo4j failed: Component 'org.neo4j.server.AbstractNeoServer$ServerComponentsLifecycleAdapter@f575d2b' was successfully initialized, but failed to start. Please see the attached cause exception "Address localhost:7474 is already in use, cannot bind to it.". Starting Neo4j failed: Component 'org.neo4j.server.AbstractNeoServer$ServerComponentsLifecycleAdapter@f575d2b' was successfully initialized, but failed to start. Please see the attached cause exception "Address localhost:7474 is already in use, cannot bind to it.".
+org.neo4j.server.ServerStartupException: Starting Neo4j failed: Component 'org.neo4j.server.AbstractNeoServer$ServerComponentsLifecycleAdapter@f575d2b' was successfully initialized, but failed to start. Please see the attached cause exception "Address localhost:7474 is already in use, cannot bind to it.".
+	at org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError(ServerStartupErrors.java:68)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:220)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:111)
+	at org.neo4j.server.ServerBootstrapper.start(ServerBootstrapper.java:79)
+	at org.neo4j.server.CommunityEntryPoint.main(CommunityEntryPoint.java:32)
+Caused by: org.neo4j.kernel.lifecycle.LifecycleException: Component 'org.neo4j.server.AbstractNeoServer$ServerComponentsLifecycleAdapter@f575d2b' was successfully initialized, but failed to start. Please see the attached cause exception "Address localhost:7474 is already in use, cannot bind to it.".
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:466)
+	at org.neo4j.kernel.lifecycle.LifeSupport.start(LifeSupport.java:107)
+	at org.neo4j.server.AbstractNeoServer.start(AbstractNeoServer.java:212)
+	... 3 more
+Caused by: org.neo4j.helpers.PortBindException: Address localhost:7474 is already in use, cannot bind to it.
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:334)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:302)
+	at org.eclipse.jetty.server.AbstractNetworkConnector.doStart(AbstractNetworkConnector.java:80)
+	at org.eclipse.jetty.server.ServerConnector.doStart(ServerConnector.java:238)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:68)
+	at org.neo4j.server.web.Jetty9WebServer.startJetty(Jetty9WebServer.java:320)
+	at org.neo4j.server.web.Jetty9WebServer.start(Jetty9WebServer.java:152)
+	at org.neo4j.server.AbstractNeoServer.startWebServer(AbstractNeoServer.java:321)
+	at org.neo4j.server.AbstractNeoServer.access$700(AbstractNeoServer.java:102)
+	at org.neo4j.server.AbstractNeoServer$ServerComponentsLifecycleAdapter.start(AbstractNeoServer.java:527)
+	at org.neo4j.kernel.lifecycle.LifeSupport$LifecycleInstance.start(LifeSupport.java:445)
+	... 5 more
+2019-09-16 08:36:14.641+0000 INFO  Neo4j Server shutdown initiated by request
