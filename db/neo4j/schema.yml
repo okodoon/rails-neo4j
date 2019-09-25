@@ -14,16 +14,54 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( age:Age ) ASSERT age.uuid IS UNIQUE
+- CONSTRAINT ON ( birthplace:BirthPlace ) ASSERT birthplace.uuid IS UNIQUE
+- CONSTRAINT ON ( bloodtype:BloodType ) ASSERT bloodtype.uuid IS UNIQUE
+- CONSTRAINT ON ( career:Career ) ASSERT career.uuid IS UNIQUE
 - CONSTRAINT ON ( faculty:Faculty ) ASSERT faculty.uuid IS UNIQUE
 - CONSTRAINT ON ( person:Person ) ASSERT person.uuid IS UNIQUE
+- CONSTRAINT ON ( player:Player ) ASSERT player.uuid IS UNIQUE
+- CONSTRAINT ON ( position:Position ) ASSERT position.uuid IS UNIQUE
+- CONSTRAINT ON ( strikertype:StrikerType ) ASSERT strikertype.uuid IS UNIQUE
+- CONSTRAINT ON ( tall:Tall ) ASSERT tall.uuid IS UNIQUE
+- CONSTRAINT ON ( team:Team ) ASSERT team.uuid IS UNIQUE
+- CONSTRAINT ON ( throwerstrikertype:ThrowerStrikerType ) ASSERT throwerstrikertype.uuid
+  IS UNIQUE
+- CONSTRAINT ON ( throwertype:ThrowerType ) ASSERT throwertype.uuid IS UNIQUE
 - CONSTRAINT ON ( university:University ) ASSERT university.uuid IS UNIQUE
+- CONSTRAINT ON ( weight:Weight ) ASSERT weight.uuid IS UNIQUE
+- CONSTRAINT ON ( チーム:チーム ) ASSERT チーム.uuid IS UNIQUE
+- CONSTRAINT ON ( ポジション:ポジション ) ASSERT ポジション.uuid IS UNIQUE
+- CONSTRAINT ON ( 体重:体重 ) ASSERT 体重.uuid IS UNIQUE
+- CONSTRAINT ON ( 出身地:出身地 ) ASSERT 出身地.uuid IS UNIQUE
 - CONSTRAINT ON ( 大学:大学 ) ASSERT 大学.uuid IS UNIQUE
 - CONSTRAINT ON ( 学部:学部 ) ASSERT 学部.uuid IS UNIQUE
-:indexes: []
+- CONSTRAINT ON ( 年数:年数 ) ASSERT 年数.uuid IS UNIQUE
+- CONSTRAINT ON ( 年齢:年齢 ) ASSERT 年齢.uuid IS UNIQUE
+- CONSTRAINT ON ( 投打:投打 ) ASSERT 投打.uuid IS UNIQUE
+- CONSTRAINT ON ( 血液型:血液型 ) ASSERT 血液型.uuid IS UNIQUE
+- CONSTRAINT ON ( 身長:身長 ) ASSERT 身長.uuid IS UNIQUE
+- CONSTRAINT ON ( 選手:選手 ) ASSERT 選手.uuid IS UNIQUE
+:indexes:
+- INDEX ON :投打(batting)
+- INDEX ON :投打(throw)
+- INDEX ON :血液型(position)
+- INDEX ON :血液型(type)
 :versions:
-- '20190916112201'
-- '20190916124138'
-- '20190916124214'
 - '20190916153821'
 - '20190916154344'
 - '20190916154405'
+- '20190923130620'
+- '20190923131440'
+- '20190923131514'
+- '20190923132055'
+- '20190923132107'
+- '20190923132134'
+- '20190923132214'
+- '20190923132229'
+- '20190923132309'
+- '20190923132318'
+- '20190923132341'
+- '20190925004135'
+- '20190925011056'
+- '20190925011517'

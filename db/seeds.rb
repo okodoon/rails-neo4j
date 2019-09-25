@@ -9,6 +9,7 @@ File.open("#{Rails.root}/db/school.json") do |file|
 	university_metadata.each_with_index do |hash, index|
 		university = University.create(name: hash["大学"])
 		faculty_metadata[index]["学部"].each do |fac_name|
+			print "."
 			if Faculty.find_by(name: fac_name).present?
 				university.faculties << Faculty.find_by(name: fac_name) 
 			else
